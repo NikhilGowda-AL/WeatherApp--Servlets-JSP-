@@ -1,0 +1,332 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0f7fa; /* Light blue background for a fresh look */
+}
+
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    font-family: Arial, sans-serif;
+    background: #333; /* Dark gray background for the body */
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with other elements */
+}
+
+.rain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Light black background for raindrops */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 
+                0 0 2px rgba(0, 0, 0, 0.2), 
+                0 0 3px rgba(0, 0, 0, 0.2), 
+                0 0 4px rgba(0, 0, 0, 0.2), 
+                0 0 5px rgba(0, 0, 0, 0.2); /* Simulate raindrop effect */
+    animation: rain 0.5s linear infinite;
+}
+
+@keyframes rain {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
+
+.bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bubbles::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3); /* Light color for bubbles */
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: bubble 10s infinite;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1, #fad0c4, #fbc2eb, #ff9a9e);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    animation: gradientBG 10s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.weather-header .weather-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-50px); }
+}
+
+.weather-content .weather-subtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.weather-tech-list {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.weather-search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-search-input {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+.weather-search-input:focus {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 1);
+}
+
+.weather-search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff6f61;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.weather-search-button:hover {
+    background: #ff4a42;
+    transform: scale(1.1);
+}
+
+.weather-search-button i {
+    margin-left: 5px;
+}
+
+.home-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.intro-text {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background: #007bff;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    background: #004494;
+    transform: scale(1);
+}
+
+.btn-secondary {
+    background: #ff5722;
+}
+
+.btn-secondary:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+}
+
+.btn-secondary:active {
+    background: #d84315;
+    transform: scale(1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+p {
+    margin-top: 20px;
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
